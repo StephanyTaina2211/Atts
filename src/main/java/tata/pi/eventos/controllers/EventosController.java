@@ -8,7 +8,8 @@ public class EventosController {
 	
 	@RequestMapping("/eventos/form")
 	public String form() {
-		return "formEvento";
+		return "formEvento";	
+	
 	}
 	
 }
