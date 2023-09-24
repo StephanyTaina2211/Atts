@@ -17,7 +17,7 @@ public class EventosController {
 	
 	@RequestMapping("/eventos/form")
 	public String form() {
-		return "formEvento";	
+		return "eventos/formEvento";	
 	
 	}
 	
@@ -31,13 +31,13 @@ public class EventosController {
         System.out.println("Local: " + evento.getLocal());
         er.save(evento);
         
-        return "redirect:/success";
+        return "eventos/redirect:/success";
     }
 	
 	
 	@GetMapping("/success")
 	public String successPage() {
-		return "success";
+		return "eventos/success";
 	}
 	
 }
