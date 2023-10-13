@@ -156,6 +156,18 @@ public class EventosController {
 		}
 
 		return "redirect:/"; // PQ SÓ RODOU COLOCANDO APENAS A BARRA "/"
-
+	}
+	
+		@GetMapping("/eventos/{idEvento}/convidados/{idConvidado}/remover")
+		public String apagarConvidado(@PathVariable Long idConvidado) {
+			
+			Optional<Convidado> optConvidado = cr.findById(idConvidado);
+			
+			if(!optConvidado.isEmpty()) {
+				
+				cr.deleteById(idConvidado);			
+			}
+			
+			return "redirect:/submit/{idEvento}";
 	}
 }
